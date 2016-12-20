@@ -10,9 +10,7 @@
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
             "stopOnEntry": false,
-            "args": [
-                "${workspaceRoot}/conf.js"
-            ]
+            "args": [ "${workspaceRoot}/conf.js" ]
         }
     ]
 }
