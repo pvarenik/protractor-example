@@ -5,12 +5,41 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "launch",
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}/app.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program Test",
+            "program": "${workspaceRoot}/node_modules/protractor/built/cli.js",
+            "args": ["${workspaceRoot}/conf.js", "--suite", "all"],
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "name": "Example from site",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
             "stopOnEntry": false,
-            "args": [ "${workspaceRoot}/conf.js" ]
+            "args": ["${workspaceRoot}/conf.js"],
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "extensionHost",
+            "request": "launch",
+            "name": "Launch Extension Test",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "args": ["${workspaceRoot}/conf.js", "--suite", "all"]
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 5858
         }
     ]
 }
